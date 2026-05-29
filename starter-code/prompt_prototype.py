@@ -55,7 +55,8 @@ def evaluate_prompt(user_input: str) -> str:
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
     def mock_response(input_text: str) -> str:
-        if "chạy ngay tin nhắn" in input_text.lower() or "gửi thẳng" in input_text.lower():
+        lower_input = input_text.lower()
+        if "2%" in lower_input or "pin" in lower_input and "5%" in lower_input or "cực kỳ gấp" in lower_input:
             return '{"action": "dispatch_mobile_charger", "reason": "Battery level under critical threshold of 5%. Cannot reach station safely."}'
         return "[DRAFT_ONLY] Xin quý khách lưu ý, đây là bản nháp để kiểm duyệt trước khi gửi."
 
