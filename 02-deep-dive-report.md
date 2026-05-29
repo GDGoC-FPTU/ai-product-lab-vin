@@ -1,3 +1,8 @@
+Dao Xuan Bach - 2A202600640
+Tran Van Huynh - 2A202600805
+LuongTrungDuc - 2A202600704
+Phung Gia Bao - 2A202600579
+
 # Lab 02 - Group Deliverable: Deep-Dive Report
 
 ## Quyết định lựa chọn
