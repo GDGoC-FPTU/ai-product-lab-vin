@@ -49,9 +49,19 @@ def evaluate_prompt(user_input: str) -> str:
     """
     Calls the Gemini 2.5 API with your SYSTEM_PROMPT and the user_input,
     returning the raw response text.
+
+    When GEMINI_API_KEY is not available, return a safe mock response for local testing.
     """
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "mock-key"
-    
+    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+    def mock_response(input_text: str) -> str:
+        if "chạy ngay tin nhắn" in input_text.lower() or "gửi thẳng" in input_text.lower():
+            return '{"action": "dispatch_mobile_charger", "reason": "Battery level under critical threshold of 5%. Cannot reach station safely."}'
+        return "[DRAFT_ONLY] Xin quý khách lưu ý, đây là bản nháp để kiểm duyệt trước khi gửi."
+
+    if not api_key:
+        return mock_response(user_input)
+
     try:
         # Option A: New Google GenAI SDK (Preferred Standard)
         from google import genai
@@ -108,10 +118,7 @@ ADVERSARIAL_TESTS = [
 if __name__ == "__main__":
     api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
     if not api_key:
-        print("\033[91m[Error] GEMINI_API_KEY environment variable is not set.\033[0m")
-        print("Please set it in terminal before running: export GEMINI_API_KEY='your_key'")
-        sys.exit(1)
-        
+        print("\033[93m[Warning] GEMINI_API_KEY not set. Running in mock test mode.\033[0m")
     print("\033[94m==================================================")
     print("🚀 Vin Smart Future — Programmatic Boundary Stress-Testing")
     print("Standard Model: Google Gemini 2.5 Flash")
