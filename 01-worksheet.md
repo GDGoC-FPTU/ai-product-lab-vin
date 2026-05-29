@@ -108,10 +108,13 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 # 🏗️ Phase 3 — DEEP-DIVE (Nhóm, 85 min)
 
 ## 3.1. Current-State Workflow Mapping (25 min)
-**Vẽ quy trình hiện tại lên bảng/giấy A3.** Sử dụng các ký hiệu:
-* 🔴 **Bottleneck:** Bước gây tắc nghẽn, tốn thời gian, hoặc sai sót nhiều nhất.
-* 🔄 **Handoff:** Điểm chuyển giao thông tin giữa người và hệ thống, hoặc giữa các bộ phận.
-* Ghi rõ thời gian vận hành trung bình: **Tổng cộng = ____ phút/lượt**.
+**Vẽ quy trình hiện tại lên bảng/giấy A* Ghi rõ thời gian vận hành trung bình: **Tổng cộng = 15 phút/lượt**.
+
+Nhóm chọn bài toán: **Xanh SM - Trợ lý điều phối sự cố xe điện sắp hết pin**.
+
+```text
+Tài xế báo sự cố pin
+  -> Điều phối viên * Ghi rõ thời gian vận hành trung bình: **Tổng cộng = ____ phút/lượt**.
 
 ## 3.2. Problem Statement (6-field) & Metrics (15 min)
 Điền đầy đủ 6 trường thông tin của bài toán:
@@ -165,6 +168,8 @@ Chọn **top 3 bài toán** từ danh sách trên và hoàn thiện **3 Quick Pr
 [ ] **NO-GO (Không khả thi / Rule-based tốt hơn):** Hủy bỏ dự án AI này.
 
 **Justification (Lý giải quyết định dựa trên bằng chứng kỹ thuật và chi phí):**
+> *Viết lý giải chi tiết tại đây*
+uật và chi phí):**
 > *Viết lý giải chi tiết tại đây*
 
 ---
